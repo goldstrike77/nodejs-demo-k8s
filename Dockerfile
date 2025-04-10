@@ -4,9 +4,7 @@ COPY package*.json ./
 RUN npm install
 RUN npm install --save \
   @opentelemetry/api \
-  @opentelemetry/auto-instrumentations-node \
-  @opentelemetry/sdk-metrics \
-  @opentelemetry/sdk-trace-node
+  @opentelemetry/auto-instrumentations-node
 COPY . .
 EXPOSE 8080
 CMD ["node", "app.js"]
