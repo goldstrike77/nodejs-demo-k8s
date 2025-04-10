@@ -2,6 +2,8 @@ FROM node:16.20-slim
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
+RUN npm install --save @opentelemetry/api
+RUN npm install --save @opentelemetry/auto-instrumentations-node
 COPY . .
 EXPOSE 8080
 CMD ["node", "app.js"]
